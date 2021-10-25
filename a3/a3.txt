@@ -1,0 +1,167 @@
+Script started on 2021-10-25 20:17:39+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="204" LINES="61"]
+#1 - #3
+]0;pranav@f6linux3: ~/a3[01;32mpranav@f6linux3[00m:[01;34m~/a3[00m$ cd CUSTOMERS
+]0;pranav@f6linux3: ~/a3/CUSTOMERS[01;32mpranav@f6linux3[00m:[01;34m~/a3/CUSTOMERS[00m$ for i in {1..200}; do filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt;  done
+]0;pranav@f6linux3: ~/a3/CUSTOMERS[01;32mpranav@f6linux3[00m:[01;34m~/a3/CUSTOMERS[00m$ ls
+12080245.BINARY.txt  14900918.txt         33472390.BINARY.txt  36700660.txt         40940033.BINARY.txt  46525003.txt         49816804.BINARY.txt  50776149.txt         51814959.BINARY.txt
+12080245.txt         16121903.BINARY.txt  33472390.txt         36749329.BINARY.txt  40940033.txt         46619300.BINARY.txt  49816804.txt         50802018.BINARY.txt  51814959.txt
+12081595.BINARY.txt  16121903.txt         33804535.BINARY.txt  36749329.txt         41955786.BINARY.txt  46619300.txt         49865122.BINARY.txt  50802018.txt         51861768.BINARY.txt
+12081595.txt         16300055.BINARY.txt  33804535.txt         36970047.BINARY.txt  41955786.txt         46686035.BINARY.txt  49865122.txt         50806303.BINARY.txt  51861768.txt
+12083294.BINARY.txt  16300055.txt         34209528.BINARY.txt  36970047.txt         42977708.BINARY.txt  46686035.txt         49998206.BINARY.txt  50806303.txt         52147705.BINARY.txt
+12083294.txt         16464880.BINARY.txt  34209528.txt         37304756.BINARY.txt  42977708.txt         47257366.BINARY.txt  49998206.txt         50864469.BINARY.txt  52147705.txt
+12084732.BINARY.txt  16464880.txt         34407806.BINARY.txt  37304756.txt         43519458.BINARY.txt  47257366.txt         50001942.BINARY.txt  50864469.txt         52634996.BINARY.txt
+12084732.txt         18809631.BINARY.txt  34407806.txt         37369285.BINARY.txt  43519458.txt         47412112.BINARY.txt  50001942.txt         50881246.BINARY.txt  52634996.txt
+12106004.BINARY.txt  18809631.txt         35560945.BINARY.txt  37369285.txt         44731853.BINARY.txt  47412112.txt         50068216.BINARY.txt  50881246.txt         52778209.BINARY.txt
+12106004.txt         23488951.BINARY.txt  35560945.txt         38163987.BINARY.txt  44731853.txt         48046429.BINARY.txt  50068216.txt         50898728.BINARY.txt  52778209.txt
+12150805.BINARY.txt  23488951.txt         35756713.BINARY.txt  38163987.txt         44890520.BINARY.txt  48046429.txt         50122160.BINARY.txt  50898728.txt         52887769.BINARY.txt
+12150805.txt         23801320.BINARY.txt  35756713.txt         38427080.BINARY.txt  44890520.txt         48139995.BINARY.txt  50122160.txt         50913245.BINARY.txt  52887769.txt
+12181658.BINARY.txt  23801320.txt         35915338.BINARY.txt  38427080.txt         45126526.BINARY.txt  48139995.txt         50199793.BINARY.txt  50913245.txt         52932955.BINARY.txt
+12181658.txt         24663035.BINARY.txt  35915338.txt         38491967.BINARY.txt  45126526.txt         49148452.BINARY.txt  50199793.txt         51125276.BINARY.txt  52932955.txt
+12598621.BINARY.txt  24663035.txt         35985708.BINARY.txt  38491967.txt         45273033.BINARY.txt  49148452.txt         50455329.BINARY.txt  51125276.txt         53072811.BINARY.txt
+12598621.txt         26331100.BINARY.txt  35985708.txt         39569598.BINARY.txt  45273033.txt         49263512.BINARY.txt  50455329.txt         51380442.BINARY.txt  53072811.txt
+12670864.BINARY.txt  26331100.txt         36218806.BINARY.txt  39569598.txt         45405508.BINARY.txt  49263512.txt         50610871.BINARY.txt  51380442.txt         [0m[01;34mdatamash-1.3[0m
+12670864.txt         28644226.BINARY.txt  36218806.txt         39663319.BINARY.txt  45405508.txt         49459388.BINARY.txt  50610871.txt         51393802.BINARY.txt
+13151565.BINARY.txt  28644226.txt         36398642.BINARY.txt  39663319.txt         46072197.BINARY.txt  49459388.txt         50732546.BINARY.txt  51393802.txt
+13151565.txt         30004532.BINARY.txt  36398642.txt         39749854.BINARY.txt  46072197.txt         49480545.BINARY.txt  50732546.txt         51638342.BINARY.txt
+14720400.BINARY.txt  30004532.txt         36642996.BINARY.txt  39749854.txt         46134316.BINARY.txt  49480545.txt         50774468.BINARY.txt  51638342.txt
+14720400.txt         31821274.BINARY.txt  36642996.txt         40824697.BINARY.txt  46134316.txt         49718706.BINARY.txt  50774468.txt         51697838.BINARY.txt
+14900918.BINARY.txt  31821274.txt         36700660.BINARY.txt  40824697.txt         46525003.BINARY.txt  49718706.txt         50776149.BINARY.txt  51697838.txt
+]0;pranav@f6linux3: ~/a3/CUSTOMERS[01;32mpranav@f6linux3[00m:[01;34m~/a3/CUSTOMERS[00m$ cd `[K~/a3/PRODUCTS
+]0;pranav@f6linux3: ~/a3/PRODUCTS[01;32mpranav@f6linux3[00m:[01;34m~/a3/PRODUCTS[00m$ for i in {1..200}; do filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt;  done
+]0;pranav@f6linux3: ~/a3/PRODUCTS[01;32mpranav@f6linux3[00m:[01;34m~/a3/PRODUCTS[00m$ ls
+0060283262.BINARY.txt  0201484021.BINARY.txt  0345451120.BINARY.txt  0451460464.BINARY.txt  0743276949.BINARY.txt  1400064031.BINARY.txt  1592285570.BINARY.txt  1893302814.BINARY.txt
+0060283262.txt         0201484021.txt         0345451120.txt         0451460464.txt         0743276949.txt         1400064031.txt         1592285570.txt         1893302814.txt
+0060548932.BINARY.txt  0307276902.BINARY.txt  0374292884.BINARY.txt  0465046754.BINARY.txt  0743454537.BINARY.txt  1400082315.BINARY.txt  1594200580.BINARY.txt  1896597890.BINARY.txt
+0060548932.txt         0307276902.txt         0374292884.txt         0465046754.txt         0743454537.txt         1400082315.txt         1594200580.txt         1896597890.txt
+0060554738.BINARY.txt  031026345X.BINARY.txt  0375705287.BINARY.txt  0525948023.BINARY.txt  0743470117.BINARY.txt  1400098424.BINARY.txt  1594480001.BINARY.txt  1930771118.BINARY.txt
+0060554738.txt         031026345X.txt         0375705287.txt         0525948023.txt         0743470117.txt         1400098424.txt         1594480001.txt         1930771118.txt
+0060724501.BINARY.txt  0312321899.BINARY.txt  0375826688.BINARY.txt  0595346685.BINARY.txt  0823069818.BINARY.txt  1401352456.BINARY.txt  1594864705.BINARY.txt  1931498717.BINARY.txt
+0060724501.txt         0312321899.txt         0375826688.txt         0595346685.txt         0823069818.txt         1401352456.txt         1594864705.txt         1931498717.txt
+006073132X.BINARY.txt  0312330529.BINARY.txt  037582670X.BINARY.txt  0595356524.BINARY.txt  0843955848.BINARY.txt  1401904599.BINARY.txt  1595324054.BINARY.txt  1931498881.BINARY.txt
+006073132X.txt         0312330529.txt         037582670X.txt         0595356524.txt         0843955848.txt         1401904599.txt         1595324054.txt         1931498881.txt
+0060732482.BINARY.txt  0312873077.BINARY.txt  0385324162.BINARY.txt  0618556133.BINARY.txt  0895260131.BINARY.txt  140220549X.BINARY.txt  1595409475.BINARY.txt  1932021116.BINARY.txt
+0060732482.txt         0312873077.txt         0385324162.txt         0618556133.txt         0895260131.txt         140220549X.txt         1595409475.txt         1932021116.txt
+0060761288.BINARY.txt  0316011770.BINARY.txt  038551428X.BINARY.txt  0670033766.BINARY.txt  0895260158.BINARY.txt  1412028221.BINARY.txt  1596701048.BINARY.txt  1933060050.BINARY.txt
+0060761288.txt         0316011770.txt         038551428X.txt         0670033766.txt         0895260158.txt         1412028221.txt         1596701048.txt         1933060050.txt
+0060820993.BINARY.txt  0316160172.BINARY.txt  0399153063.BINARY.txt  0670034509.BINARY.txt  0895260174.BINARY.txt  1420878867.BINARY.txt  1844161560.BINARY.txt  3822817341.BINARY.txt
+0060820993.txt         0316160172.txt         0399153063.txt         0670034509.txt         0895260174.txt         1420878867.txt         1844161560.txt         3822817341.txt
+0060839880.BINARY.txt  0316346624.BINARY.txt  043932162X.BINARY.txt  0671027344.BINARY.txt  0940895072.BINARY.txt  1573222453.BINARY.txt  1856354644.BINARY.txt  B000B5RXSG.BINARY.txt
+0060839880.txt         0316346624.txt         043932162X.txt         0671027344.txt         0940895072.txt         1573222453.txt         1856354644.txt         B000B5RXSG.txt
+0060875410.BINARY.txt  0316734934.BINARY.txt  0439682584.BINARY.txt  0671524313.BINARY.txt  0974520918.BINARY.txt  158234454X.BINARY.txt  1877270563.BINARY.txt  [0m[01;34mdatamash-1.3[0m
+0060875410.txt         0316734934.txt         0439682584.txt         0671524313.txt         0974520918.txt         158234454X.txt         1877270563.txt
+0060987103.BINARY.txt  0321213351.BINARY.txt  0439784549.BINARY.txt  0743226712.BINARY.txt  0975599518.BINARY.txt  1582433380.BINARY.txt  1885477457.BINARY.txt
+0060987103.txt         0321213351.txt         0439784549.txt         0743226712.txt         0975599518.txt         1582433380.txt         1885477457.txt
+0142001740.BINARY.txt  0340830301.BINARY.txt  0446500127.BINARY.txt  0743247531.BINARY.txt  0977171906.BINARY.txt  1591023491.BINARY.txt  1889658294.BINARY.txt
+0142001740.txt         0340830301.txt         0446500127.txt         0743247531.txt         0977171906.txt         1591023491.txt         1889658294.txt
+0156027321.BINARY.txt  0345449975.BINARY.txt  0446531081.BINARY.txt  0743270363.BINARY.txt  140004314X.BINARY.txt  1591840880.BINARY.txt  1892112000.BINARY.txt
+0156027321.txt         0345449975.txt         0446531081.txt         0743270363.txt         140004314X.txt         1591840880.txt         1892112000.txt
+
+#4
+
+]0;pranav@f6linux3: ~/a3/PRODUCTS[01;32mpranav@f6linux3[00m:[01;34m~/a3/PRODUCTS[00m$ cd dar[K[Katamash-1.3
+]0;pranav@f6linux3: ~/a3/PRODUCTS/datamash-1.3[01;32mpranav@f6linux3[00m:[01;34m~/a3/PRODUCTS/datamash-1.3[00m$ or i in {1..100}; do filename=$(ls ~/[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kfor i in {1..100}; do filename=$(ls ~/a4[K3/CUSTOMERS/ | grep BINARY | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 <[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KPRODUCTS/ | grep BINARY | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /him[K[Kome/pranav/a3/PRODUCTS/ $filename)&& filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/pranav/a3/PRODUCTS/prodcustcorr.txt; done
+]0;pranav@f6linux3: ~/a3/PRODUCTS/datamash-1.3[01;32mpranav@f6linux3[00m:[01;34m~/a3/PRODUCTS/datamash-1.3[00m$ cd ~/a3/PRODUCTS
+]0;pranav@f6linux3: ~/a3/PRODUCTS[01;32mpranav@f6linux3[00m:[01;34m~/a3/PRODUCTS[00m$ cd ![K~/a3/CUSTOMERS
+]0;pranav@f6linux3: ~/a3/PRODUCTS[01;32mpranav@f6linux3[00m:[01;34m~/a3/PRODUCTS[00m$ prodcustcorr.txt[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Khead prodcustcorr.txt
+0060283262 	 nan
+0060548932 	 0.17078251276599
+0060554738 	 -0.26584247109487
+0060724501 	 -0.47077593149053
+006073132X 	 -0.34637669388292
+0060732482 	 -0.16334851275179
+0060761288 	 -0.24580076354152
+0060820993 	 0.13447876109505
+0060839880 	 0.184637236469
+0060875410 	 0.42569391984308
+]0;pranav@f6linux3: ~/a3/CUSTOMERS/datamash-1.3[01;32mpranav@f6linux3[00m:[01;34m~/a3/CUSTOMERS/datamash-1.3[00m$ for i in {1..100}; do filename=$(ls ~/a3/CUSTOMERS/ | grep BINARY | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/pranav/a3/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/pranav/a3/CUSTOMERS/custcorr.txt; done
+]0;pranav@f6linux3: ~/a3/CUSTOMERS/datamash-1.3[01;32mpranav@f6linux3[00m:[01;34m~/a3/CUSTOMERS/datamash-1.3[00m$ cd ~/a3/CUSTPE[K[KP,ER[K[K[K[KOMERS
+]0;pranav@f6linux3: ~/a3/CUSTOMERS[01;32mpranav@f6linux3[00m:[01;34m~/a3/CUSTOMERS[00m$ ls
+12080245.BINARY.txt  14900918.txt         33472390.BINARY.txt  36700660.txt         40940033.BINARY.txt  46525003.txt         49816804.BINARY.txt  50776149.txt         51814959.BINARY.txt
+12080245.txt         16121903.BINARY.txt  33472390.txt         36749329.BINARY.txt  40940033.txt         46619300.BINARY.txt  49816804.txt         50802018.BINARY.txt  51814959.txt
+12081595.BINARY.txt  16121903.txt         33804535.BINARY.txt  36749329.txt         41955786.BINARY.txt  46619300.txt         49865122.BINARY.txt  50802018.txt         51861768.BINARY.txt
+12081595.txt         16300055.BINARY.txt  33804535.txt         36970047.BINARY.txt  41955786.txt         46686035.BINARY.txt  49865122.txt         50806303.BINARY.txt  51861768.txt
+12083294.BINARY.txt  16300055.txt         34209528.BINARY.txt  36970047.txt         42977708.BINARY.txt  46686035.txt         49998206.BINARY.txt  50806303.txt         52147705.BINARY.txt
+12083294.txt         16464880.BINARY.txt  34209528.txt         37304756.BINARY.txt  42977708.txt         47257366.BINARY.txt  49998206.txt         50864469.BINARY.txt  52147705.txt
+12084732.BINARY.txt  16464880.txt         34407806.BINARY.txt  37304756.txt         43519458.BINARY.txt  47257366.txt         50001942.BINARY.txt  50864469.txt         52634996.BINARY.txt
+12084732.txt         18809631.BINARY.txt  34407806.txt         37369285.BINARY.txt  43519458.txt         47412112.BINARY.txt  50001942.txt         50881246.BINARY.txt  52634996.txt
+12106004.BINARY.txt  18809631.txt         35560945.BINARY.txt  37369285.txt         44731853.BINARY.txt  47412112.txt         50068216.BINARY.txt  50881246.txt         52778209.BINARY.txt
+12106004.txt         23488951.BINARY.txt  35560945.txt         38163987.BINARY.txt  44731853.txt         48046429.BINARY.txt  50068216.txt         50898728.BINARY.txt  52778209.txt
+12150805.BINARY.txt  23488951.txt         35756713.BINARY.txt  38163987.txt         44890520.BINARY.txt  48046429.txt         50122160.BINARY.txt  50898728.txt         52887769.BINARY.txt
+12150805.txt         23801320.BINARY.txt  35756713.txt         38427080.BINARY.txt  44890520.txt         48139995.BINARY.txt  50122160.txt         50913245.BINARY.txt  52887769.txt
+12181658.BINARY.txt  23801320.txt         35915338.BINARY.txt  38427080.txt         45126526.BINARY.txt  48139995.txt         50199793.BINARY.txt  50913245.txt         52932955.BINARY.txt
+12181658.txt         24663035.BINARY.txt  35915338.txt         38491967.BINARY.txt  45126526.txt         49148452.BINARY.txt  50199793.txt         51125276.BINARY.txt  52932955.txt
+12598621.BINARY.txt  24663035.txt         35985708.BINARY.txt  38491967.txt         45273033.BINARY.txt  49148452.txt         50455329.BINARY.txt  51125276.txt         53072811.BINARY.txt
+12598621.txt         26331100.BINARY.txt  35985708.txt         39569598.BINARY.txt  45273033.txt         49263512.BINARY.txt  50455329.txt         51380442.BINARY.txt  53072811.txt
+12670864.BINARY.txt  26331100.txt         36218806.BINARY.txt  39569598.txt         45405508.BINARY.txt  49263512.txt         50610871.BINARY.txt  51380442.txt         custcorr.txt
+12670864.txt         28644226.BINARY.txt  36218806.txt         39663319.BINARY.txt  45405508.txt         49459388.BINARY.txt  50610871.txt         51393802.BINARY.txt  [0m[01;34mdatamash-1.3[0m
+13151565.BINARY.txt  28644226.txt         36398642.BINARY.txt  39663319.txt         46072197.BINARY.txt  49459388.txt         50732546.BINARY.txt  51393802.txt
+13151565.txt         30004532.BINARY.txt  36398642.txt         39749854.BINARY.txt  46072197.txt         49480545.BINARY.txt  50732546.txt         51638342.BINARY.txt
+14720400.BINARY.txt  30004532.txt         36642996.BINARY.txt  39749854.txt         46134316.BINARY.txt  49480545.txt         50774468.BINARY.txt  51638342.txt
+14720400.txt         31821274.BINARY.txt  36642996.txt         40824697.BINARY.txt  46134316.txt         49718706.BINARY.txt  50774468.txt         51697838.BINARY.txt
+14900918.BINARY.txt  31821274.txt         36700660.BINARY.txt  40824697.txt         46525003.BINARY.txt  49718706.txt         50776149.BINARY.txt  51697838.txt
+]0;pranav@f6linux3: ~/a3/CUSTOMERS[01;32mpranav@f6linux3[00m:[01;34m~/a3/CUSTOMERS[00m$ c[Kn[Khead custcorr.txt
+12080245 	 -0.53300179088903
+12081595 	 0.87287156094397
+12083294 	 -0.31622776601684
+12084732 	 nan
+12106004 	 -0.77777777777778
+12150805 	 0.33333333333333
+12181658 	 0.33888604279315
+12598621 	 -0.038158278584417
+12670864 	 -0.043355498476206
+13151565 	 nan
+
+
+#5-6 top customer and product for gnuplot
+]0;pranav@f6linux3: ~/a3/CUSTOMERS[01;32mpranav@f6linux3[00m:[01;34m~/a3/CUSTOMERS[00m$ head topcustcorr.txt
+49459388 	 1
+12081595 	 0.87287156094397
+35560945 	 0.86602540378444
+40824697 	 0.76603234628543
+36970047 	 0.57735026918963
+38427080 	 0.5
+40940033 	 0.46852128566582
+33472390 	 0.43037668342494
+51638342 	 0.37796447300923
+26331100 	 0.375
+]0;pranav@f6linux3: ~/a3/PRODUCTS[01;32mpranav@f6linux3[00m:[01;34m~/a3/PRODUCTS[00m$ sort -k 2 -r prodcor[K[K[Kcustcorr.tc[Kxt ?s[K[K> sortedprodcorr.txr[Kt
+]0;pranav@f6linux3: ~/a3/PRODUCTS[01;32mpranav@f6linux3[00m:[01;34m~/a3/PRODUCTS[00m$ head topprodcorr.txt
+0595356524 	 0.70710678118655
+0375705287 	 0.66666666666667
+1400098424 	 0.50952466536507
+0312321899 	 0.46193488543716
+0345449975 	 0.45749571099781
+0940895072 	 0.42846746693867
+0060875410 	 0.42569391984308
+0340830301 	 0.40824829046386
+1844161560 	 0.37267799624996
+1594200580 	 0.36313651960128
+
+
+# 8 - 10
+]0;pranav@f6linux3: ~/a3/PRODUCTS[01;32mpranav@f6linux3[00m:[01;34m~/a3/PRODUCTS[00m$ cd ![K~/a3
+]0;pranav@f6linux3: ~/a3[01;32mpranav@f6linux3[00m:[01;34m~/a3[00m$ grep 1933060050~/amazon_reviews_us_Books_v1_02.tsv | cut -f 9,14 >[1@ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C 1933060050.review.txt
+]0;pranav@f6linux3: ~/a3[01;32mpranav@f6linux3[00m:[01;34m~/a3[00m$ sed -i 's/<[^/]*\/>//g' 1933060050.review.txt
+]0;pranav@f6linux3: ~/a3[01;32mpranav@f6linux3[00m:[01;34m~/a3[00m$ sed -i 's/\b[a-zA-Z]\{1,2\}\b//g' 1933060050.review.txt
+]0;pranav@f6linux3: ~/a3[01;32mpranav@f6linux3[00m:[01;34m~/a3[00m$ sed -i -e 's/[\.,;]//g' -e 's/\band\b//g' -e 's/\bor\b//g' -e 's/\bif\b//g' -e 's/\bin\b//g' -e 's/\bit\b//g' 1933060050.review.txt
+]0;pranav@f6linux3: ~/a3[01;32mpranav@f6linux3[00m:[01;34m~/a3[00m$ awk -F '\t' '{if($1==1) print $2}' OFS=' ' 1933060050.review.txt | tr -s ' ' | tr '[:space:]' '[\n*]' | sort | uniq -c | sort -k1 -r | head -n 15
+      8 the
+      5 book
+      3 sports
+      3 passion
+      3 not
+      3 for
+      3 The
+      2 you
+      2 would
+      2 was
+      2 through
+      2 that
+      2 out
+      2 one
+      2 love
+]0;pranav@f6linux3: ~/a3[01;32mpranav@f6linux3[00m:[01;34m~/a3[00m$ awk -F '\t' '{if($1==0) print $2}' OFS=' ' 1933060050.review.txt | tr -s ' ' | tr '[:space:]' '[\n*]' | sort | uniq -c | sort -k1 -r | head -n 15
+]0;pranav@f6linux3: ~/a3[01;32mpranav@f6linux3[00m:[01;34m~/a3[00m$ awk -F '\t' '{if($1==0) print $2}' OFS=' ' 1933060050.review.txt | tr -s ' ' | tr '[:space:]' '[\n*]' | sort | uniq -c | sort -k1 -r | head -n 15
+[1;61r[58;1Hbash: ./datamash: No such file or directory[8G[?12l[?25h[?25l7[2;59r8[59d
+[1;61r[58;1Hbash: ./datamash: No such file or directory[8G[?12l[?25h[?25l7[2;59r8[59d
+[1;61r[58;1Hbash: ./datamash: No such file or directory[8G[
